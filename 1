@@ -1,0 +1,11 @@
+		mov		r1, #13   ; we will calculate number of 1's in 32 bit binary representation of 13
+		mov		r2, #1
+		mov		r4, #0
+loop
+		and		r3, r1, #1    ;extracting LSB
+		cmp		r3, #1        ;comparing LSB
+		addeq	r4, r4, #1    ;incrementaing the counter
+		mov		r1, r1, lsr #1   ;decrementing the number to extract new LSB
+		add		r2, r2, #1
+		cmp		r2, #32
+		ble		loop

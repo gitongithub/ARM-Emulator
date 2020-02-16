@@ -1,0 +1,10 @@
+ARR		DCD		2,5,11,6,8            ;creating an array of 5 elements of our choice
+		LDR		R0,=ARR               ;storing array in r0
+		MOV		R1,#0
+		MOV		R2,#0
+Loop                                      ;inititalisation of loop to add elements
+		LDR		R3,[R0,R2,LSL #2]     ;iterating over required element
+		ADD		R2,R2,#1              ;incrementing the counter
+		ADD		R1,R1,R3
+		CMP		R2,#5                 ;iterating till end of array
+		BNE		Loop

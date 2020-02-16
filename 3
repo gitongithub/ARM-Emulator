@@ -1,0 +1,16 @@
+		mov		r1, #11                  ;loading of values
+		mov		r2, #22
+		mov		r3, #33
+		bl		pro                      ;calling the function created
+		end
+pro
+		add		r1,r1,r2                 ;adding contents r1 and r2
+		mov		r6,r1                    ;storing r1's data in r6
+		sub		r3,r3,#1                 ;subtracting 1 as it has already been multiplied by 1
+loop                                         ;logic to multiply implemplented from here
+		add		r1,r1,r6
+		sub		r3,r3,#1                 ;decrementing r3 for muliplication onlny till r3 times
+		cmp		r3,#0                    ;loop condition
+		bne		loop
+		end
+		
